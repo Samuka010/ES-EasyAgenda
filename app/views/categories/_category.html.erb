@@ -1,0 +1,9 @@
+<div class="card">
+    <div class="card-body">
+        <h2><%= category.name %></h2>
+    </div>
+    <div class="card-footer w-100 d-flex justify-content-between">
+        <%= link_to "Editar", edit_category_path(category), class: "btn btn-warning"%>
+        <%= button_to "Remover", category_path(category), method: :delete, class: "btn btn-danger", data: { turbo_confirm: "Você tem Certeza ? "} %>
+    </div>
+</div>

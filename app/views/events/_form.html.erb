@@ -1,0 +1,27 @@
+<div class="card">
+  <%= simple_form_for @event do |form| %>
+   <div class="card-body">
+      <%= form.input :name %>
+
+      <%= form.input :description do%>
+        <%= form.rich_text_area :description %>
+      <% end %>
+
+
+      <%= form.association :category %>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <%= form.input :started_at, html5: true %>
+        </div>
+         <div class="col-12 col-md-6">
+          <%= form.input :finished_at, html5: true %>
+        </div>
+      </div>
+      <%= form.input :file%>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+      <%= link_to "Voltar", events_path, class: "btn btn-secondary"%>
+      <%= form.button :button, class: "btn btn-primary"%>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<div class="card">
+    <%= simple_form_for @category do |form| %>
+        <div class="card-body">
+            <%= form.input :identifier %>
+            <%= form.input :name %>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <%= link_to "Voltar", categories_path, class: "btn btn-secondary"%>
+            <%= form.button :button, class: "btn btn-primary"%>
+        </div>
+    <% end %>
+</div>

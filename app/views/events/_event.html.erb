@@ -1,0 +1,34 @@
+
+<div class="card" id="<%= dom_id event %>">
+  <div class="card-body">
+    <p>
+      <strong>Name:</strong>
+      <%= event.name %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= event.description %>
+    </p>
+
+    <p>
+      <strong>Started at:</strong>
+      <%= event.started_at %>
+    </p>
+
+    <p>
+      <strong>Finished at:</strong>
+      <%= event.finished_at %>
+    </p>
+
+    <% if event.file.attached?%>
+      <%= link_to "Baixar Anexo", event.file, class: "btn btn-secondary"%>
+    <% end %>
+  </div>
+
+  <div class="card-footer d-flex justify-content-between">
+      <%= link_to "Editar", edit_event_path(event), class: "btn btn-warning"%>
+      <%= button_to "Remover", event_path(event), method: :delete, class: "btn btn-danger", data: { turbo_confirm: "Você tem Certeza ? "} %>
+  </div>
+
+</div>
